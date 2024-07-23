@@ -24,7 +24,10 @@ class Library:
 
     def find_book(self, characteristic) -> int:
         for book in self.get_books().items():
-            if book[1].get_title() == characteristic or book[1].get_author() == characteristic or book[1].get_year() == characteristic:
+            if (book[1].get_id() == characteristic or
+                    book[1].get_title() == characteristic or
+                    book[1].get_author() == characteristic or
+                    book[1].get_year() == characteristic):
                 return book[0]
         return -1
 
