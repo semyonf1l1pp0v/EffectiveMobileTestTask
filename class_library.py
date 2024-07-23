@@ -16,11 +16,8 @@ class Library:
     def add_book(self, new_book_id: int, new_book: Book) -> None:
         self.__books[new_book_id] = new_book
 
-    def delete_book(self, id_to_delete: int) -> bool:
-        if self.find_book(id_to_delete) != -1:
-            del self.__books[id_to_delete]
-            return True
-        return False
+    def delete_book(self, id_to_delete: int) -> None:
+        del self.__books[id_to_delete]
 
     def find_book(self, characteristic) -> int:
         for book in self.get_books().items():
@@ -31,8 +28,5 @@ class Library:
                 return book[0]
         return -1
 
-    def change_book_status(self, id_to_modify_status: int, new_status: str) -> bool:
-        if self.find_book(id_to_modify_status) != -1:
-            self.__books[id_to_modify_status].set_status(status=new_status)
-            return True
-        return False
+    def change_book_status(self, id_to_modify_status: int, new_status: str) -> None:
+        self.__books[id_to_modify_status].set_status(status=new_status)

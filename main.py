@@ -25,6 +25,6 @@ while choice != 0:
         case 4:
             dialog_show_all_books(library=our_library)
         case 5:
-            pass
+            dialog_change_book_status(library=our_library)
 
 print("\nПрограмма завершена.")

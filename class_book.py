@@ -5,7 +5,7 @@ class Book:
     __year: int = None
     __status: str = None
 
-    def __init__(self, book_id: int=0, title: str="", author: str="", year: int=0, status: str = "В наличии") -> None:
+    def __init__(self, book_id: int = 0, title: str = "", author: str = "", year: int = 0, status: str = "В наличии") -> None:
         self.set_id(book_id)
         self.set_title(title)
         self.set_author(author)
