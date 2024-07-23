@@ -1,19 +1,19 @@
 class Book:
-    __id: int = None
+    __book_id: int = None
     __title: str = None
     __author: str = None
     __year: int = None
     __status: str = None
 
-    def __init__(self, id: int, title: str, author: str, year: int, status: str = "В наличии") -> None:
-        self.set_id(id)
+    def __init__(self, book_id: int, title: str, author: str, year: int, status: str = "В наличии") -> None:
+        self.set_id(book_id)
         self.set_title(title)
         self.set_author(author)
         self.set_year(year)
         self.set_status(status)
 
-    def set_id(self, id: int) -> None:
-        self.__id = id
+    def set_id(self, book_id: int) -> None:
+        self.__book_id = book_id
 
     def set_title(self, title: str) -> None:
         self.__title = title
@@ -28,7 +28,7 @@ class Book:
         self.__status = status
 
     def get_id(self) -> int:
-        return self.__id
+        return self.__book_id
 
     def get_title(self) -> str:
         return self.__title

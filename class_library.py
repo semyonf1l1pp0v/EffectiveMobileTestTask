@@ -4,11 +4,11 @@ from class_book import *
 class Library:
     __books: dict = None
 
-    def __init__(self, id: int, book: Book) -> None:
-        self.set_books(id, book)
+    def __init__(self, book_id: int, book: Book) -> None:
+        self.set_books(book_id, book)
 
-    def set_books(self, id: int, book: Book) -> None:
-        self.__books[id] = book
+    def set_books(self, book_id: int, book: Book) -> None:
+        self.__books[book_id] = book
 
     def get_books(self) -> dict:
         return self.__books
