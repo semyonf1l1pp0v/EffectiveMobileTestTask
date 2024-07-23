@@ -21,7 +21,7 @@ while choice != 0:
         case 2:
             dialog_delete_book(library=our_library)
         case 3:
-            pass
+            dialog_find_book(library=our_library)
         case 4:
             dialog_show_all_books(library=our_library)
         case 5:
