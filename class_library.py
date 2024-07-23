@@ -2,9 +2,9 @@ from class_book import *
 
 
 class Library:
-    __books: dict = None
+    __books: dict = {}
 
-    def __init__(self, book_id: int, book: Book) -> None:
+    def __init__(self, book: Book, book_id: int = 0) -> None:
         self.set_books(book_id, book)
 
     def set_books(self, book_id: int, book: Book) -> None:
@@ -28,14 +28,8 @@ class Library:
                 return book[0]
         return -1
 
-    # def show_all_books(self):
-    #     for book in self.get_books().items():
-    #         pass
-
     def change_book_status(self, id_to_modify_status: int, new_status: str) -> bool:
         if self.find_book(id_to_modify_status) != -1:
             self.__books[id_to_modify_status].set_status(status=new_status)
             return True
         return False
-
-
