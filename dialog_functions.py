@@ -19,7 +19,15 @@ def dialog_add_book(library: Library, new_book_id: int) -> None:
 
 
 def dialog_delete_book(library: Library) -> None:
-    id_book_to_delete = int(input("\nВведите id книги, которую хотите удалить: "))
+    while True:
+        try:
+            id_book_to_delete = int(input("\nВведите id книги, которую хотите удалить: "))
+            if id_book_to_delete > 0:
+                break
+            else:
+                print("\nID указан неверно - введите целое положительное число")
+        except ValueError:
+            print("\nID указан неверно - введите целое число")
     if library.find_book_by_id(book_id=id_book_to_delete) != -1:
         library.delete_book(id_to_delete=id_book_to_delete)
         print("\nКнига успешно удалена")
@@ -49,7 +57,15 @@ def dialog_show_all_books(library: Library) -> None:
 
 
 def dialog_change_book_status(library: Library) -> None:
-    id_book_to_change_status = int(input("Введите id книги, статус которой хотите изменить: "))
+    while True:
+        try:
+            id_book_to_change_status = int(input("Введите id книги, статус которой хотите изменить: "))
+            if id_book_to_change_status > 0:
+                break
+            else:
+                print("\nID указан неверно - введите целое положительное число")
+        except ValueError:
+            print("\nID указан неверно - введите целое число")
     if library.find_book_by_id(book_id=id_book_to_change_status) != -1:
         if library.get_books()[id_book_to_change_status].get_status() == "В наличии":
             library.change_book_status(id_to_modify_status=id_book_to_change_status, new_status="Выдана")
