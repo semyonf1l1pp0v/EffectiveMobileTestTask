@@ -2,6 +2,7 @@ from class_library import *
 
 
 def dialog_add_book(library: Library, new_book_id: int) -> None:
+    """Диалоговая функция для добавления Книги в Библиотеку"""
     title = input("\nВведите название книги: ")
     author = input("Введите автора книги: ")
     while True:
@@ -19,6 +20,7 @@ def dialog_add_book(library: Library, new_book_id: int) -> None:
 
 
 def dialog_delete_book(library: Library) -> None:
+    """Диалоговая функция для удаления книги из Библиотеки по id"""
     while True:
         try:
             id_book_to_delete = int(input("\nВведите id книги, которую хотите удалить: "))
@@ -36,6 +38,8 @@ def dialog_delete_book(library: Library) -> None:
 
 
 def dialog_find_book(library: Library):
+    """Диалоговая функция для поиска Книг в Библиотеке по названию/автору/году, печатает все Книги с заданным
+    значением атрибута (например, все Книги, выпущенные в 1999 году)"""
     parameter = input("Введите название книги, или ее автора, или год издания: ")
     matching_books = library.find_matching_books(characteristic=parameter)
     if matching_books:
@@ -50,6 +54,7 @@ def dialog_find_book(library: Library):
 
 
 def dialog_show_all_books(library: Library) -> None:
+    """Диалоговая функция для вывода в консоль информации обо всех Книгах в Библиотеке"""
     print("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
     for book in library.get_books().items():
         print("{:<10} {:<15} {:<15} {:<15} {:<10}".format(book[1].get_id(), book[1].get_title(), book[1].get_author(),
@@ -57,6 +62,7 @@ def dialog_show_all_books(library: Library) -> None:
 
 
 def dialog_change_book_status(library: Library) -> None:
+    """Диалоговая функция для изменения статуса Книги по id"""
     while True:
         try:
             id_book_to_change_status = int(input("Введите id книги, статус которой хотите изменить: "))
@@ -77,6 +83,7 @@ def dialog_change_book_status(library: Library) -> None:
 
 
 def dialog_write_info_to_file(library: Library) -> None:
+    """Диалоговая функция для записи информации обо всех Книгах в txt файл"""
     with open("output.txt", "w") as file:
         file.write("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
         books = library.get_books().values()
