@@ -12,6 +12,7 @@ while choice != 0:
     print("3. Найти книгу")
     print("4. Показать все книги")
     print("5. Изменить статус книги")
+    print("6. Записать данные о книгах в текстовый файл")
     print("0. Выйти")
     try:
         choice = int(input("\nВыберите действие: "))
@@ -31,6 +32,8 @@ while choice != 0:
             dialog_show_all_books(library=our_library)
         case 5:
             dialog_change_book_status(library=our_library)
+        case 6:
+            dialog_write_info_to_file(library=our_library)
 
 print("\nПрограмма завершена.")
 

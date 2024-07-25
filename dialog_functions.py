@@ -74,3 +74,13 @@ def dialog_change_book_status(library: Library) -> None:
         print("\nСтатус книги успешно изменен")
     else:
         print("\nКниги с таким id нет в библиотеке")
+
+
+def dialog_write_info_to_file(library: Library) -> None:
+    with open("output.txt", "w") as file:
+        file.write("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
+        books = library.get_books().values()
+        for book in books:
+            file.write("\n{:<10} {:<15} {:<15} {:<15} {:<10}".format(book.get_id(), book.get_title(), book.get_author(),
+                                                                     book.get_year(), book.get_status()))
+    print("Данные о книгах успешно записаны в файл")
