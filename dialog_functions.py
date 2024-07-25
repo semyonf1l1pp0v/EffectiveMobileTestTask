@@ -4,7 +4,15 @@ from class_library import *
 def dialog_add_book(library: Library, new_book_id: int) -> None:
     title = input("\nВведите название книги: ")
     author = input("Введите автора книги: ")
-    year = int(input("Введите год выхода книги: "))
+    while True:
+        try:
+            year = int(input("Введите год выхода книги: "))
+            if year > 0:
+                break
+            else:
+                print("\nГод не может быть отрицательным")
+        except ValueError:
+            print("\nГод указан неверно - введите число")
     new_book = Book(book_id=new_book_id, title=title, author=author, year=year)
     library.add_book(new_book_id=new_book_id, new_book=new_book)
     print("\nКнига успешно добавлена")
