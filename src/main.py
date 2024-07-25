@@ -23,7 +23,7 @@ while choice != 0:
     try:
         choice = int(input("\nВыберите действие: "))
     except ValueError:
-        print("\nОпция выбрана неверно - введите число")
+        print("\nОпция выбрана неверно - введите целое число от 0 до 6")
         continue
     match choice:
         case 0:
