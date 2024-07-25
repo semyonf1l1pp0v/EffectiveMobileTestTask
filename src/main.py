@@ -24,6 +24,7 @@ while choice != 0:
         choice = int(input("\nВыберите действие: "))
     except ValueError:
         print("\nОпция выбрана неверно - введите число")
+        continue
     match choice:
         case 0:
             break
