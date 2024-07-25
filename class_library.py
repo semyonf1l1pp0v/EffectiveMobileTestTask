@@ -25,7 +25,7 @@ class Library:
                 return book[0]
         return -1
 
-    def find_matching_books(self, characteristic) -> list:
+    def find_matching_books(self, characteristic: str) -> list[Book]:
         matching_books = []
         for book in self.get_books().items():
             if (book[1].get_title() == characteristic or

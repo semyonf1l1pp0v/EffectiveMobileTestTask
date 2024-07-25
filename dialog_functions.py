@@ -10,9 +10,9 @@ def dialog_add_book(library: Library, new_book_id: int) -> None:
             if year > 0:
                 break
             else:
-                print("\nГод не может быть отрицательным")
+                print("\nГод не может быть отрицательным, введите положительное целое число")
         except ValueError:
-            print("\nГод указан неверно - введите число")
+            print("\nГод указан неверно - введите целое число")
     new_book = Book(book_id=new_book_id, title=title, author=author, year=year)
     library.add_book(new_book_id=new_book_id, new_book=new_book)
     print("\nКнига успешно добавлена")
