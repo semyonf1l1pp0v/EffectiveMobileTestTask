@@ -1,4 +1,4 @@
-from book import *
+from classes.book import *
 
 
 class Library:

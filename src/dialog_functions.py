@@ -44,10 +44,10 @@ def dialog_find_book(library: Library):
     matching_books = library.find_matching_books(characteristic=parameter)
     if matching_books:
         print("\nКниги по вашему запросу:")
-        print("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
+        print("{:<10} {:<25} {:<25} {:<25} {:<20}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
         for book in matching_books:
             print(
-                "{:<10} {:<15} {:<15} {:<15} {:<10}".format(book.get_id(), book.get_title(), book.get_author(),
+                "{:<10} {:<25} {:<25} {:<25} {:<20}".format(book.get_id(), book.get_title(), book.get_author(),
                                                             book.get_year(), book.get_status()))
     else:
         print("Книг по вашему запросу не найдено")
@@ -55,9 +55,9 @@ def dialog_find_book(library: Library):
 
 def dialog_show_all_books(library: Library) -> None:
     """Диалоговая функция для вывода в консоль информации обо всех Книгах в Библиотеке"""
-    print("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
+    print("{:<10} {:<25} {:<25} {:<25} {:<20}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
     for book in library.get_books().items():
-        print("{:<10} {:<15} {:<15} {:<15} {:<10}".format(book[1].get_id(), book[1].get_title(), book[1].get_author(),
+        print("{:<10} {:<25} {:<25} {:<25} {:<20}".format(book[1].get_id(), book[1].get_title(), book[1].get_author(),
                                                           book[1].get_year(), book[1].get_status()))
 
 
@@ -85,9 +85,9 @@ def dialog_change_book_status(library: Library) -> None:
 def dialog_write_info_to_file(library: Library) -> None:
     """Диалоговая функция для записи информации обо всех Книгах в txt файл"""
     with open("output.txt", "w") as file:
-        file.write("{:<10} {:<15} {:<15} {:<15} {:<10}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
+        file.write("{:<10} {:<25} {:<25} {:<25} {:<20}".format('ID', 'Название', 'Автор', 'Год издания', 'Статус'))
         books = library.get_books().values()
         for book in books:
-            file.write("\n{:<10} {:<15} {:<15} {:<15} {:<10}".format(book.get_id(), book.get_title(), book.get_author(),
+            file.write("\n{:<10} {:<25} {:<25} {:<25} {:<20}".format(book.get_id(), book.get_title(), book.get_author(),
                                                                      book.get_year(), book.get_status()))
     print("Данные о книгах успешно записаны в файл")

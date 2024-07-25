@@ -1,4 +1,4 @@
-from dialog_functions import *
+from src.dialog_functions import *
 
 choice = None   # Переменная для хранения числа, обозначающего опцию, введенного пользователем
 book_id = 1
@@ -42,5 +42,3 @@ while choice != 0:
             dialog_write_info_to_file(library=our_library)
 
 print("\nПрограмма завершена.")
-
-
