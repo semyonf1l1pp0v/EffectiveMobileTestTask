@@ -1,4 +1,4 @@
-from class_library import *
+from classes.library import *
 
 
 def dialog_add_book(library: Library, new_book_id: int) -> None:
